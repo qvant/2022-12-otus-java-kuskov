@@ -1,1 +1,3 @@
-# 2022-12-otus-java-kuskov
+ФИО слушателя: Кусков А.А.
+Название курса: Java Developer. Professional
+Группа: 2022-12
