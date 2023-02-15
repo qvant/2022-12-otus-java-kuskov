@@ -20,7 +20,7 @@ public class CustomerService {
         //Возможно, чтобы реализовать этот метод, потребуется посмотреть как Map.Entry сделан в jdk
         Map.Entry<Customer, String> customerStringEntry = map.firstEntry();
         TreeMap<Customer, String> treeMap = new TreeMap<>(Comparator.comparing(Customer::getScores));
-        if (customerStringEntry != null){
+        if (customerStringEntry != null) {
             treeMap.put(new Customer(customerStringEntry.getKey().getId(), customerStringEntry.getKey().getName(), customerStringEntry.getKey().getScores()), customerStringEntry.getValue());
         }
         return treeMap.firstEntry();
@@ -30,7 +30,7 @@ public class CustomerService {
         Map.Entry<Customer, String> customerStringEntry = map.higherEntry(customer);
 
         TreeMap<Customer, String> buf = new TreeMap<>(Comparator.comparing(Customer::getScores));
-        if (customerStringEntry != null){
+        if (customerStringEntry != null) {
             buf.put(new Customer(customerStringEntry.getKey().getId(), customerStringEntry.getKey().getName(), customerStringEntry.getKey().getScores()), customerStringEntry.getValue());
         }
         return buf.firstEntry();

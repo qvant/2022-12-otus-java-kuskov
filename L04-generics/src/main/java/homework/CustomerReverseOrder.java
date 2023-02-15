@@ -2,8 +2,6 @@ package homework;
 
 
 import java.util.ArrayDeque;
-import java.util.Comparator;
-import java.util.TreeMap;
 
 public class CustomerReverseOrder {
 
