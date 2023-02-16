@@ -1,0 +1,5 @@
+rootProject.name = 'otusJava'
+
+include 'L04-generics'
+
+
