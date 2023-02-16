@@ -2,22 +2,23 @@ package homework;
 
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class CustomerReverseOrder {
 
     //todo: 2. надо реализовать методы этого класса
     //надо подобрать подходящую структуру данных, тогда решение будет в "две строчки"
-    private final ArrayDeque<Customer> arrayDeque;
+    private final Deque<Customer> deque;
 
     public CustomerReverseOrder() {
-        this.arrayDeque = new ArrayDeque<>();
+        this.deque = new ArrayDeque<>();
     }
 
     public void add(Customer customer) {
-        arrayDeque.add(customer);
+        deque.add(customer);
     }
 
     public Customer take() {
-        return arrayDeque.pollLast();
+        return deque.pollLast();
     }
 }

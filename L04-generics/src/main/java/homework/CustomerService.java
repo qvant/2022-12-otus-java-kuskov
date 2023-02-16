@@ -19,21 +19,18 @@ public class CustomerService {
     public Map.Entry<Customer, String> getSmallest() {
         //Возможно, чтобы реализовать этот метод, потребуется посмотреть как Map.Entry сделан в jdk
         Map.Entry<Customer, String> customerStringEntry = map.firstEntry();
-        TreeMap<Customer, String> treeMap = new TreeMap<>(Comparator.comparing(Customer::getScores));
         if (customerStringEntry != null) {
-            treeMap.put(new Customer(customerStringEntry.getKey().getId(), customerStringEntry.getKey().getName(), customerStringEntry.getKey().getScores()), customerStringEntry.getValue());
+            return Map.entry(new Customer(customerStringEntry.getKey().getId(), customerStringEntry.getKey().getName(), customerStringEntry.getKey().getScores()), customerStringEntry.getValue());
         }
-        return treeMap.firstEntry();
+        return null;
     }
 
     public Map.Entry<Customer, String> getNext(Customer customer) {
         Map.Entry<Customer, String> customerStringEntry = map.higherEntry(customer);
-
-        TreeMap<Customer, String> buf = new TreeMap<>(Comparator.comparing(Customer::getScores));
         if (customerStringEntry != null) {
-            buf.put(new Customer(customerStringEntry.getKey().getId(), customerStringEntry.getKey().getName(), customerStringEntry.getKey().getScores()), customerStringEntry.getValue());
+            return Map.entry(new Customer(customerStringEntry.getKey().getId(), customerStringEntry.getKey().getName(), customerStringEntry.getKey().getScores()), customerStringEntry.getValue());
         }
-        return buf.firstEntry();
+        return null;
     }
 
     public void add(Customer customer, String data) {
